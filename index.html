@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Configuração do Sensor MESTTI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --primary: #007bff;
+      --dark: #333;
+      --bg: #ffffff;
+      --card-bg: #f8f9fa;
+      --border: #e9ecef;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 620px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .subtitle {
+      text-align: center;
+      opacity: 0.8;
+      margin-bottom: 32px;
+      color: var(--dark);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #ffffff;
+      border-left: 4px solid var(--primary);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .step-number {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--primary);
+      min-width: 24px;
+    }
+
+    .step-text {
+      line-height: 1.5;
+      font-size: 15px;
+      color: var(--dark);
+    }
+
+    .warning {
+      margin-top: 20px;
+      font-size: 14px;
+      background: #fff3cd;
+      padding: 14px;
+      border-radius: 10px;
+      border-left: 4px solid #ffc107;
+      color: #856404;
+    }
+
+    .button {
+      margin-top: 28px;
+      width: 100%;
+      padding: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+      transition: all 0.25s ease;
+    }
+
+    .button:hover {
+      background: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,123,255,0.4);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 13px;
+      opacity: 0.7;
+      color: var(--dark);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .step {
+        padding: 12px;
+        gap: 10px;
+      }
+
+      .step-number {
+        font-size: 18px;
+        min-width: 20px;
+      }
+
+      .step-text {
+        font-size: 14px;
+      }
+
+      .warning {
+        font-size: 13px;
+        padding: 12px;
+      }
+
+      .button {
+        padding: 16px;
+        font-size: 16px;
+      }
+
+      .footer {
+        font-size: 12px;
+        margin-top: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Configuração do Sensor MESTTI</h1>
+    <div class="subtitle">
+      Siga os passos abaixo para conectar o sensor à sua rede Wi-Fi
+    </div>
+
+    <div class="card">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-text">
+          Certifique-se de estar <strong>próximo ao sensor</strong> e que ele esteja em
+          <strong>modo de configuração</strong> (normalmente indicado por um LED piscando).
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-text">
+          No seu celular ou computador, conecte-se ao Wi-Fi do sensor.
+          Ele aparecerá com um nome semelhante a:
+          <strong>MESTTI-Sensor-XXXX</strong>.<br>
+          <em>Certifique-se de estar conectado ao Wi-Fi do sensor antes de clicar no botão abaixo.</em>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-text">
+          Ao clicar no botão abaixo, você será direcionado para a página
+          interna do sensor, onde poderá informar o Wi-Fi e a senha do local.
+        </div>
+      </div>
+
+      <div class="warning">
+        ⚠️ Durante a configuração, sua internet pode ficar temporariamente indisponível.
+        Isso é normal e ocorre apenas enquanto você estiver conectado ao Wi-Fi do sensor.
+      </div>
+
+      <button class="button" onclick="goToSensor()">
+        Configurar Wi-Fi do Sensor
+      </button>
+    </div>
+
+    <div class="footer">
+      Após a configuração, o sensor se conectará automaticamente e começará a enviar dados.
+    </div>
+  </div>
+
+  <script>
+    function goToSensor() {
+      // Redirect simples e seguro
+      window.location.href = "http://192.168.4.1";
+    }
+  </script>
+</body>
+</html>
